@@ -5,14 +5,14 @@ import entities.abstracts.Users;
 public class Customers extends Users {
 
     private String tcNo;
-    private int birthYear;
+    private int age;
 
     public Customers() {
     }
 
-    public Customers(String tcNo, int birthYear,String id,String firstName,String lastName) {
+    public Customers(String tcNo, int age, String id, String firstName, String lastName) {
         this.tcNo = tcNo;
-        this.birthYear = birthYear;
+        this.age = age;
         super.setId(id);
         super.setFirstName(firstName);
         super.setLastName(lastName);
@@ -26,17 +26,20 @@ public class Customers extends Users {
         this.tcNo = tcNo;
     }
 
-    public int getBirthYear() {
-        return birthYear;
+    public int getAge() {
+        return age;
     }
 
-    public void setBirthYear(int birthYear) {
-        this.birthYear = birthYear;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override
     public String toString() {
-        return "tcNo='" + tcNo + '\'' +
-                ", birthYear=" + birthYear;
+        return  "ID: "+getId() +
+                ", Name: " + getFirstName() +
+                ", Surname: " + getLastName() +
+                ", Age: "+ getAge() +
+                ", T.C NO: "+getTcNo();
     }
 }

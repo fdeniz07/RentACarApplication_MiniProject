@@ -1,21 +1,20 @@
 package entities.abstracts;
 
-import java.util.List;
-
 public abstract class Cars {
 
     private String id;
-    // private List<Object> type;
     private int modelYear;
-    //private List<Object> category;
-    private String colour;
-    private int km;
-    private int seat;
-    private int door;
-    private int gear;
-    private String ac;
+    private boolean gear=false;
     private String fuelType;
     private double dailyPrice;
+    private boolean isActive=true;
+
+//    private String colour;
+//    private int km;
+//    private int seat;
+//    private int door;
+//    private String ac;
+
 
     public String getId() {
         return id;
@@ -33,52 +32,12 @@ public abstract class Cars {
         this.modelYear = modelYear;
     }
 
-    public String getColour() {
-        return colour;
-    }
-
-    public void setColour(String colour) {
-        this.colour = colour;
-    }
-
-    public int getKm() {
-        return km;
-    }
-
-    public void setKm(int km) {
-        this.km = km;
-    }
-
-    public int getSeat() {
-        return seat;
-    }
-
-    public void setSeat(int seat) {
-        this.seat = seat;
-    }
-
-    public int getDoor() {
-        return door;
-    }
-
-    public void setDoor(int door) {
-        this.door = door;
-    }
-
-    public int getGear() {
+    public boolean isGear() {
         return gear;
     }
 
-    public void setGear(int gear) {
+    public void setGear(boolean gear) {
         this.gear = gear;
-    }
-
-    public String getAc() {
-        return ac;
-    }
-
-    public void setAc(String ac) {
-        this.ac = ac;
     }
 
     public String getFuelType() {
@@ -96,4 +55,25 @@ public abstract class Cars {
     public void setDailyPrice(double dailyPrice) {
         this.dailyPrice = dailyPrice;
     }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
+    @Override
+    public String toString() {
+        return "Cars{" +
+                "id='" + id + '\'' +
+                ", modelYear=" + modelYear +
+                ", gear=" + gear +
+                ", fuelType='" + fuelType + '\'' +
+                ", dailyPrice=" + dailyPrice +
+                //", isActive =" + isActive +
+                '}';
+    }
 }
+
