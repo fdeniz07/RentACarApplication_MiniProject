@@ -2,17 +2,21 @@ package entities.concretes;
 
 import entities.abstracts.Users;
 
+import java.time.LocalDate;
+
 public class Customers extends Users {
 
     private String tcNo;
-    private int age;
+    private LocalDate birthDate;
+    private LocalDate driverLicenceDate;
 
     public Customers() {
     }
 
-    public Customers(String tcNo, int age, String id, String firstName, String lastName) {
+    public Customers(String tcNo,  String id, String firstName, String lastName,LocalDate birthDate,LocalDate driverLicenceDate) {
         this.tcNo = tcNo;
-        this.age = age;
+        this.birthDate = birthDate;
+        this.driverLicenceDate=driverLicenceDate;
         super.setId(id);
         super.setFirstName(firstName);
         super.setLastName(lastName);
@@ -26,12 +30,20 @@ public class Customers extends Users {
         this.tcNo = tcNo;
     }
 
-    public int getAge() {
-        return age;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public LocalDate getDriverLicenceDate() {
+        return driverLicenceDate;
+    }
+
+    public void setDriverLicenceDate(LocalDate driverLicenceDate) {
+        this.driverLicenceDate = driverLicenceDate;
     }
 
     @Override
@@ -39,7 +51,8 @@ public class Customers extends Users {
         return  "ID: "+getId() +
                 ", Name: " + getFirstName() +
                 ", Surname: " + getLastName() +
-                ", Age: "+ getAge() +
+                ", BirthDate: "+ getBirthDate() +
+                ", DriverLicenceDate: "+ getDriverLicenceDate() +
                 ", T.C NO: "+getTcNo();
     }
 }

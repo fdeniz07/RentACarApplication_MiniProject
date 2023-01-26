@@ -43,6 +43,16 @@ public class Audi extends Cars {
                 ;
     }
 
+    @Override
+    public void showAvailableCars(boolean isActive) {
+
+    }
+
+    @Override
+    public void showInactiveCars(boolean isActive) {
+
+    }
+
     public void fillAudiList(){
         Audi audi = new Audi();
         Audi audi2 = new Audi();

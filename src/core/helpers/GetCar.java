@@ -1,48 +1,17 @@
-package business.concretes;
+package core.helpers;
 
-import business.abstracts.MenuService;
-import core.helpers.GetCar;
-import core.helpers.Slow;
-import core.validations.DateValidator;
 import entities.concretes.Honda;
 
 import java.util.Scanner;
 
-public class HondaMenuManager extends MenuManager {
+public class GetCar {
 
-    Scanner inp= new Scanner(System.in);
+    Scanner inp = new Scanner(System.in);
 
-    Honda honda = new Honda(); //DI (Dependeny Injection) --> Don't repeat yourself (DRY)  - SOLID
 
-    GetCar getCar = new GetCar();
+    public void getHonda (){
+        Honda honda = new Honda();
 
-    public void hondaMenu(){
-
-        honda.fillHondaList();
-
-        String select;
-
-        honda.showAvailableCars(true);
-        honda.showInactiveCars(false);
-
-        System.out.println("========================");
-        System.out.println("Rezervasyon işlemini bitirmek için 'Q', devam etmek için herhangi bir tuşa basınız");
-        select = inp.nextLine();
-
-        if (select.equalsIgnoreCase("Q")){
-            getSelectionMenu();
-        }
-
-        System.out.println("Lütfen kiralamak istediğiniz arabanın kodunu giriniz");
-        getCar.getHonda();
-        String s ="Müşreti kayıt menüsüne yönlendiriliyorsunuz...\n";
-        Slow.slowPrint(s,30);
-        //customersManager.register();
-
-    }
-
-    @Override
-    public void search() {
         int flag = 0;
         String id;
 
@@ -70,9 +39,14 @@ public class HondaMenuManager extends MenuManager {
             }
 
         }while (true);
+    }
+
+    public void getBmw(){
 
     }
 
+    public void getAudi(){
 
+    }
 
 }

@@ -43,6 +43,16 @@ public class Bmw extends Cars {
                 ;
     }
 
+    @Override
+    public void showAvailableCars(boolean isActive) {
+
+    }
+
+    @Override
+    public void showInactiveCars(boolean isActive) {
+
+    }
+
     public void fillBmwList(){
         Bmw bmw = new Bmw();
         Bmw bmw2 = new Bmw();

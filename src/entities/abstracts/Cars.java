@@ -1,5 +1,9 @@
 package entities.abstracts;
 
+import entities.concretes.Honda;
+
+import java.util.List;
+
 public abstract class Cars {
 
     private String id;
@@ -14,6 +18,7 @@ public abstract class Cars {
 //    private int seat;
 //    private int door;
 //    private String ac;
+//    private boolean inMaintance=false;
 
 
     public String getId() {
@@ -75,5 +80,9 @@ public abstract class Cars {
                 //", isActive =" + isActive +
                 '}';
     }
+
+    public abstract void showAvailableCars(boolean isActive);
+
+    public abstract void showInactiveCars(boolean isActive);
 }
 
