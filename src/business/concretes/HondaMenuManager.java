@@ -14,6 +14,7 @@ public class HondaMenuManager extends MenuManager {
 
     Honda honda = new Honda(); //DI (Dependeny Injection) --> Don't repeat yourself (DRY)  - SOLID
 
+    CustomerManager customerManager = new CustomerManager();
     GetCar getCar = new GetCar();
 
     public void hondaMenu(){
@@ -23,6 +24,8 @@ public class HondaMenuManager extends MenuManager {
         String select;
 
         honda.showAvailableCars(true);
+
+        System.out.println("=================== InactiveCars ==============");
         honda.showInactiveCars(false);
 
         System.out.println("========================");
@@ -35,9 +38,9 @@ public class HondaMenuManager extends MenuManager {
 
         System.out.println("Lütfen kiralamak istediğiniz arabanın kodunu giriniz");
         getCar.getHonda();
-        String s ="Müşreti kayıt menüsüne yönlendiriliyorsunuz...\n";
+        String s ="Müşrteri kayıt menüsüne yönlendiriliyorsunuz...\n";
         Slow.slowPrint(s,30);
-        //customersManager.register();
+        customerManager.register();
 
     }
 

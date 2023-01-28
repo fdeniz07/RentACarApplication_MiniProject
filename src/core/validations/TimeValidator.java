@@ -1,14 +1,12 @@
 package core.validations;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class DateValidator {
+public class TimeValidator {
 
-    public LocalDate getValidDate() {//param "Surucu lisans"    yada   "dogum" String  verilecek
+    public LocalDate getValidTime() {//param "Surucu lisans"    yada   "dogum" String  verilecek
 
         Scanner scanner = new Scanner(System.in);
         LocalDate date = null; //LocalDate.now();

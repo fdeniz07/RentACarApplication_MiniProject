@@ -1,5 +1,7 @@
 package core.validations;
 
+import core.helpers.Slow;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
@@ -27,6 +29,8 @@ public class DriverLicenceValidator {
                 System.out.println("Araç kiralamak için en az 3 yillik tecrübeye sahip olmalısınız!");
                 System.out.println("Tekrar deneyiniz: ");
             } else {
+                String message = "Araç kiralamak için ehliyetinizin süresi uygun görülmüstür.";
+                Slow.slowPrint(message, 30);
                 break;
             }
 

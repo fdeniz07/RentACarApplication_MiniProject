@@ -17,6 +17,7 @@ public class GetCar {
 
         do {
             id = inp.nextLine();
+            honda.fillHondaList();
             for (Honda w:honda.hondaList){
 
                 if (w.getId().equals(id)){
