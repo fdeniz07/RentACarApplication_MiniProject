@@ -12,6 +12,8 @@ public abstract class Cars {
     private String fuelType;
     private double dailyPrice;
     private boolean isActive=true;
+    private String model;
+
 
 //    private String colour;
 //    private int km;
@@ -20,6 +22,14 @@ public abstract class Cars {
 //    private String ac;
 //    private boolean inMaintance=false;
 
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
 
     public String getId() {
         return id;
@@ -73,6 +83,7 @@ public abstract class Cars {
     public String toString() {
         return "Cars{" +
                 "id='" + id + '\'' +
+                ", model='" + model + '\'' +
                 ", modelYear=" + modelYear +
                 ", gear=" + gear +
                 ", fuelType='" + fuelType + '\'' +

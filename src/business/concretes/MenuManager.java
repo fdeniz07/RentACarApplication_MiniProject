@@ -47,4 +47,10 @@ public class MenuManager extends MenuService {
 
     }
 
+    @Override
+    public void addCarsNewList() {
+
+
+    }
+
 }

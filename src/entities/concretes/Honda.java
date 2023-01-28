@@ -7,16 +7,14 @@ import java.util.List;
 
 public class Honda extends Cars {
 
-    public List<Honda> hondaList = new ArrayList<>();
-
-    private String model;
+    public List<Honda> hondaList = new ArrayList<>();//private String model;
 //    private String modelName;
 
     public Honda() {
     }
 
     public Honda(String model, String id, int modelYear, boolean gear, String fuelType, double dailyPrice,boolean isActive) {
-        this.model = model;
+        super.setModel(model);
         super.setId(id);
         super.setModelYear(modelYear);
         super.setGear(gear);
@@ -25,13 +23,6 @@ public class Honda extends Cars {
         super.setActive(isActive);
     }
 
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
 
     @Override
     public String toString() {
