@@ -2,6 +2,7 @@ package business.concretes;
 
 import business.abstracts.MenuService;
 import core.helpers.GetCar;
+import core.helpers.GetReservation;
 import core.helpers.Slow;
 import core.validations.DateValidator;
 import entities.concretes.Honda;
@@ -16,6 +17,7 @@ public class HondaMenuManager extends MenuManager {
 
     CustomerManager customerManager = new CustomerManager();
     GetCar getCar = new GetCar();
+    GetReservation reservationCard = new GetReservation();
 
     public void hondaMenu(){
 
@@ -38,7 +40,9 @@ public class HondaMenuManager extends MenuManager {
 
         System.out.println("Lütfen kiralamak istediğiniz arabanın kodunu giriniz");
         getCar.getHonda();
-        String s ="Müşrteri kayıt menüsüne yönlendiriliyorsunuz...\n";
+
+
+        String s ="Müşteri kayıt menüsüne yönlendiriliyorsunuz...\n";
         Slow.slowPrint(s,30);
         customerManager.register();
 

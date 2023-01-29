@@ -7,9 +7,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PickUpReturnDateValidator {
-
-    Reservation reservation = new Reservation();
-    LocalDate temporalDate = null; //LocalDate.now();
+        LocalDate temporalDate = null;
     boolean isDigit;
     public  LocalDate getPickUpValidDate() {//reservasyon isleminde, müsterinin araci teslim alma tarihi, rezervasyon giris tarihinden eski olamaz!
 
@@ -57,7 +55,7 @@ public class PickUpReturnDateValidator {
         Reservation reservation = new Reservation();
         LocalDate pickUpDate = reservation.getPickUpDate();
 
-        LocalDate date = null; //LocalDate.now();
+        LocalDate date = null;
         Scanner scanner = new Scanner(System.in);
         int gun, ay, yil;
         System.out.println("Lutfen tarihinizi gun / ay / yil (31/01/2021) olacak sekilde giriniz");
@@ -85,8 +83,6 @@ public class PickUpReturnDateValidator {
                 isDigit = true;
             }
             temporalDate=(LocalDate) date;
-           // System.out.println(date);
-
 
         } while (isDigit);
 

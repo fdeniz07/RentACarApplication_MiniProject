@@ -26,6 +26,7 @@ public class Start {
             System.out.println("3-Rezervasyonu onayla");
             System.out.println("4-Arac Rezervasyon İptal");
             System.out.println("5-Rezervasyon Listesi");
+            System.out.println("6-Arac Listesi");
             System.out.println("0-Çıkış");
 
             select = inp.nextInt();

@@ -11,7 +11,7 @@ public class Reservation {
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private LocalDate returnDate;
-    private LocalTime returnime;
+    private LocalTime returnTime;
 
     public Reservation() {
     }
@@ -22,7 +22,7 @@ public class Reservation {
         this.pickUpDate = pickUpDate;
         this.pickUpTime = pickUpTime;
         this.returnDate = returnDate;
-        this.returnime = returnime;
+        this.returnTime = returnime;
         this.reservationId = reservationId;
     }
 
@@ -74,12 +74,12 @@ public class Reservation {
         this.returnDate = returnDate;
     }
 
-    public LocalTime getReturnime() {
-        return returnime;
+    public LocalTime getReturtime() {
+        return returnTime;
     }
 
-    public void setReturnime(LocalTime returnime) {
-        this.returnime = returnime;
+    public void setReturtime(LocalTime returtime) {
+        this.returnTime = returtime;
     }
 
     @Override
@@ -90,6 +90,6 @@ public class Reservation {
                 ", pickUpDate=" + pickUpDate +
                 ", pickUpTime=" + pickUpTime +
                 ", returnDate=" + returnDate +
-                ", returnime=" + returnime;
+                ", returnime=" + returnTime;
     }
 }
