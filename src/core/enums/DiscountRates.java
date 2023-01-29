@@ -1,4 +1,4 @@
-package entities.concretes;
+package core.enums;
 
 public enum DiscountRates {
 

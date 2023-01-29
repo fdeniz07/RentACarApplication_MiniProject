@@ -1,7 +1,7 @@
 package business.concretes;
 
 import business.abstracts.ReservationCostCalculateService;
-import entities.concretes.DiscountRates;
+import core.enums.DiscountRates;
 
 public class ReservationCostCalculateManager implements ReservationCostCalculateService {
     @Override

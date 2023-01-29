@@ -1,7 +1,5 @@
 package business.abstracts;
 
-import entities.concretes.DiscountRates;
-
 public interface ReservationCostCalculateService {
 
     //pickupdate ve returndate
