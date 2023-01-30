@@ -11,7 +11,6 @@ import entities.abstracts.Cars;
 import entities.abstracts.Users;
 import entities.concretes.Reservation;
 
-import java.security.PublicKey;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -54,7 +53,7 @@ public class ReservationManager extends ReservationService implements IdMaker {
         reservation.setReturnDate(pickUpDateValidator.getReturnValidDate(reservation.getPickUpDate()));
 
         System.out.println("Lütfen araci teslim alacaginiz saati (Saat:Dakika formatinda) giriniz: ");
-        reservation.setReturtime(LocalTime.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("HH:mm")));
+        reservation.setReturnTime(LocalTime.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("HH:mm")));
 
         reservation.setReservationId(idMaker(String.valueOf(number)));
         number++;

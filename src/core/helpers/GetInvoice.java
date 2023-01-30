@@ -16,23 +16,23 @@ public class GetInvoice {
 
     public void Invoice() {
 
-        Customers c = reservationCard.reservedCustomers.get(index);
-        Reservation r = reservationCard.reservations.get(index);
-        Cars car = reservationCard.reservedCars.get(index);
+        Customers c = GetReservation.reservedCustomers.get(index);
+        Reservation r = GetReservation.reservations.get(index);
+        Cars car = GetReservation.reservedCars.get(index);
 
 
         System.out.printf("%-11s  %-15s  %-15s  %-11s  %-15s  %-25s \n", "Müsteri ID", "Isim", "Soyisim", "TC No", "Dogum Tarihi", "Ehliyet Verilis Tarihi");
-        System.out.printf("%-11s  %-15s  %-15s  %-11s  %-15s  %-25s \n", "-----------", "--------------", "-------------", "-----------", "--------------", "----------", "------------");
+        System.out.printf("%-11s  %-15s  %-15s  %-11s  %-15s  %-25s \n", "-----------", "--------------", "-------------", "-----------", "--------------", "----------", "-------------------------");
         System.out.printf("%-11s  %-15s  %-15s  %-11s  %-15s  %-25s\n", c.getId(), c.getFirstName(), c.getLastName(), c.getTcNo(), c.getBirthDate(), c.getDriverLicenceDate());
         System.out.println();
 
-        System.out.printf("%-15s  %-15s  %-11s  %-11s  %-15s  %-11s %-9s\n", "Rezervasyon ID", "Alis Yeri", "Alis Tarihi", "Alis Saati", "Teslim Yeri", "Teslim Saati", "Toplam");
-        System.out.printf("%-15s  %-15s  %-11s  %-11s  %-15s  %-11s %-9s\n", "-----", "-----", "--", "----------", "--------------", "----------", "------------");
-        System.out.printf("%-15s  %-15s  %-11s  %-11s  %-15s  %-11s $%-8s\n", r.getReservationId(), r.getPickUpLocation(), r.getPickUpDate(), r.getPickUpTime(), r.getReturnLocation(), r.getReturnDate(), r.getReturtime(),priceCalculate());
+        System.out.printf("%-15s  %-15s  %-11s  %-11s  %-15s  %-15s %-9s\n", "Rezervasyon ID", "Alis Yeri", "Alis Tarihi", "Alis Saati", "Teslim Yeri", "Teslim Saati", "Toplam");
+        System.out.printf("%-15s  %-15s  %-11s  %-11s  %-15s  %-15s %-9s\n", "---------------", "---------------", "-------------", "-----------", "--------------", "------------------", "------------");
+        System.out.printf("%-15s  %-15s  %-11s  %-11s  %-15s  %-15s %-9s $%-8s\n", r.getReservationId(), r.getPickUpLocation(), r.getPickUpDate(), r.getPickUpTime(), r.getReturnLocation(), r.getReturnDate(), r.getReturnTime(),priceCalculate());
 
         System.out.println();
         System.out.printf("%-7s  %-10s  %-10s  %-10s  %-14s  %-10s %-15s\n", "Marka", "Model", "ID", "Model Yılı", "Otomatik Vites", "Yakıt Tipi", "Günlük Fiyat");
-        System.out.printf("%-7s  %-10s  %-10s  %-10s  %-14s  %-10s %-15s\n", "-----", "-----", "--", "----------", "--------------", "----------", "------------");
+        System.out.printf("%-7s  %-10s  %-10s  %-10s  %-14s  %-10s %-15s\n", "------", "-----------", "-------", "----------", "--------------", "----------", "------------");
         System.out.printf("%-7s  %-10s  %-10s  %-10s  %-14s  %-10s $%-14s\n", "Honda", car.getModel(), car.getId(), car.getModelYear(), car.isGear(), car.getFuelType(), car.getDailyPrice());
 
         index++;
@@ -41,9 +41,9 @@ public class GetInvoice {
     }
 
     private double priceCalculate() {
-        int day = calculateDay.calculate(reservationCard.reservations.get(index).getPickUpDate(), reservationCard.reservations.get(index).getReturnDate());
+        int day = calculateDay.calculate(GetReservation.reservations.get(index).getPickUpDate(), GetReservation.reservations.get(index).getReturnDate());
         
-        double price= reservationCard.reservedCars.get(index).getDailyPrice();
+        double price= GetReservation.reservedCars.get(index).getDailyPrice();
         
         if (day<7){
 

@@ -59,26 +59,27 @@ public class Honda extends Cars {
     @Override
     public void showAvailableCars(boolean isActive){
 
-        System.out.printf("%-7s  %-10s  %-10s  %-10s  %-14s  %-10s %-15s\n","Marka","Model","ID","Model Yılı","Otomatik Vites","Yakıt Tipi","Günlük Fiyat");
-        System.out.printf("%-7s  %-10s  %-10s  %-10s  %-14s  %-10s %-15s\n","-----","-----","--","----------","--------------","----------","------------");
+        System.out.printf("%-10s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","Marka","Model","ID","Model Yılı","Otomatik Vites","Yakıt Tipi","Günlük Fiyat");
+        System.out.printf("%-10s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","--------","---------","-----------","----------","--------------","----------","------------");
         for (Honda w :hondaList){
 
             if (w.isActive()==isActive){
-                System.out.printf("%-7s  %-10s  %-10s  %-10s  %-14s  %-10s $%-14s\n","Honda",w.getModel(),w.getId(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
+                System.out.printf("%-10s  %-10s  %-13s  %-10s  %-14s  %-12s $%-14s\n","Honda",w.getModel(),w.getId(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
             }
         }
+        System.out.println();
     }
+
 
     public void showInactiveCars(boolean isActive){
 
-        System.out.printf("%-7s  %-10s  %-10s  %-10s  %-14s  %-10s %-15s\n","Marka","Model","ID","Model Yılı","Otomatik Vites","Yakıt Tipi","Günlük Fiyat");
-        System.out.printf("%-7s  %-10s  %-10s  %-10s  %-14s  %-10s %-15s\n","-----","-----","--","----------","--------------","----------","------------");
+        System.out.printf("%-10s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","Marka","Model","ID","Model Yılı","Otomatik Vites","Yakıt Tipi","Günlük Fiyat");
+        System.out.printf("%-10s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","--------","---------","-----------","----------","--------------","----------","------------");
         for (Honda w:hondaList){
 
-            if (w.isActive()==false){
-                System.out.printf("%-7s  %-10s  %-10s  %-10s  %-14s  %-10s $%-14s\n","Honda",w.getModel(),w.getId(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
+            if (!w.isActive()){
+                System.out.printf("%-10s  %-10s  %-13s  %-10s  %-14s  %-12s $%-14s\n","Honda",w.getModel(),w.getId(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
             }
         }
     }
 }
-

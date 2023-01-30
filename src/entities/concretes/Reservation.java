@@ -16,13 +16,13 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(String reservationId, String pickUpLocation, String returnLocation, LocalDate pickUpDate, LocalTime pickUpTime, LocalDate returnDate, LocalTime returnime) {
+    public Reservation(String reservationId, String pickUpLocation, String returnLocation, LocalDate pickUpDate, LocalTime pickUpTime, LocalDate returnDate, LocalTime returnTime) {
         this.pickUpLocation = pickUpLocation;
         this.returnLocation = returnLocation;
         this.pickUpDate = pickUpDate;
         this.pickUpTime = pickUpTime;
         this.returnDate = returnDate;
-        this.returnTime = returnime;
+        this.returnTime = returnTime;
         this.reservationId = reservationId;
     }
 
@@ -74,12 +74,12 @@ public class Reservation {
         this.returnDate = returnDate;
     }
 
-    public LocalTime getReturtime() {
+    public LocalTime getReturnTime() {
         return returnTime;
     }
 
-    public void setReturtime(LocalTime returtime) {
-        this.returnTime = returtime;
+    public void setReturnTime(LocalTime returnTime) {
+        this.returnTime = returnTime;
     }
 
     @Override
@@ -90,6 +90,6 @@ public class Reservation {
                 ", pickUpDate=" + pickUpDate +
                 ", pickUpTime=" + pickUpTime +
                 ", returnDate=" + returnDate +
-                ", returnime=" + returnTime;
+                ", returnTime=" + returnTime;
     }
 }

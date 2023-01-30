@@ -9,9 +9,7 @@ public class CalculateDay {
 
     public int calculate(LocalDate pickUpDate, LocalDate returnDate) {
 
-        int reservationDays = (int) ChronoUnit.YEARS.between(pickUpDate, returnDate);
-
-        return reservationDays;
+        return (int) ChronoUnit.YEARS.between(pickUpDate, returnDate);
     }
 }
 
