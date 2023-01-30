@@ -45,6 +45,7 @@ public class NameValidator {
                 lastName = lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
                 break;
             }
+
         } while (true);
 
         return lastName;
