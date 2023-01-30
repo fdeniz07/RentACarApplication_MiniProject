@@ -9,7 +9,7 @@ public class CalculateDay {
 
     public int calculate(LocalDate pickUpDate, LocalDate returnDate) {
 
-        return (int) ChronoUnit.YEARS.between(pickUpDate, returnDate);
+        return (int) ChronoUnit.DAYS.between(pickUpDate, returnDate);
     }
 }
 

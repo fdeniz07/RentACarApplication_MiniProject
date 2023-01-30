@@ -19,6 +19,7 @@ public class NameValidator {
                 System.out.println("İsminiz en az 3 ve en fazla 20 harf içermelidir...");
                 System.out.println("Tekrar deneyiniz: ");
             } else {
+                firstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
                 break;
             }
         } while (true);
@@ -41,6 +42,7 @@ public class NameValidator {
                 System.out.println("Soyadiniz en az 3 ve en fazla 30 harf içermelidir...");
                 System.out.println("Tekrar deneyiniz: ");
             } else {
+                lastName = lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
                 break;
             }
         } while (true);

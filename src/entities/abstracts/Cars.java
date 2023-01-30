@@ -93,7 +93,8 @@ public abstract class Cars {
     }
 
     public abstract void showAvailableCars(boolean isActive);
-
+    public abstract void showSelectedCar(boolean isActive);
     public abstract void showInactiveCars(boolean isActive);
+
 }
 

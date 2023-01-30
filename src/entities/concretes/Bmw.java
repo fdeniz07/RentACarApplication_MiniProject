@@ -49,6 +49,11 @@ public class Bmw extends Cars {
     }
 
     @Override
+    public void showSelectedCar(boolean isActive) {
+
+    }
+
+    @Override
     public void showInactiveCars(boolean isActive) {
 
     }

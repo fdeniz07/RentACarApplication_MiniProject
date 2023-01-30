@@ -7,10 +7,12 @@ import core.helpers.IdMaker;
 import core.helpers.Slow;
 import core.validations.DateValidator;
 import core.validations.PickUpReturnDateValidator;
+import core.validations.TimeValidator;
 import entities.abstracts.Cars;
 import entities.abstracts.Users;
 import entities.concretes.Reservation;
 
+import java.sql.Time;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -28,39 +30,42 @@ public class ReservationManager extends ReservationService implements IdMaker {
     ReservationCostCalculateManager costCalculateManager = new ReservationCostCalculateManager();
     DateValidator dateValidator = new DateValidator();
     PickUpReturnDateValidator pickUpDateValidator = new PickUpReturnDateValidator();
-
+    TimeValidator timeValidator = new TimeValidator();
     GetReservation reservationCard = new GetReservation();
     GetInvoice getInvoice = new GetInvoice();
 
     public void reservationConfirmation() {
-
+        System.out.println("================================== REZERVASYON ONAY =============================================\n");
         System.out.println("Rezervasyon onay bölümüne hoşgeldiniz !");
-        System.out.println("====================================");
+        System.out.println("=================================================================================================");
 
         System.out.println("Lütfen araci teslim alacaginiz sehir adini giriniz: ");
-        reservation.setPickUpLocation(scanner.nextLine());
+        reservation.setPickUpLocation(scanner.nextLine().toUpperCase());
 
         System.out.println("Lütfen araci teslim alacaginiz tarihi (Gun/Ay/Yil formatinda) giriniz: ");
         reservation.setPickUpDate(pickUpDateValidator.getPickUpValidDate());
 
         System.out.println("Lütfen araci teslim alacaginiz saati (Saat:Dakika formatinda) giriniz: ");
-        reservation.setPickUpTime(LocalTime.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("HH:mm")));
+        reservation.setPickUpTime(timeValidator.getValidTime());
+        //reservation.setPickUpTime(LocalTime.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("HH:mm")));
 
         System.out.println("Lütfen araci teslim edeceginiz sehir adini giriniz: ");
-        reservation.setReturnLocation(scanner.nextLine());
+        reservation.setReturnLocation(scanner.nextLine().toUpperCase());
 
         System.out.println("Lütfen araci teslim edeceginiz tarihi (Gun/Ay/Yil formatinda) giriniz: ");
         reservation.setReturnDate(pickUpDateValidator.getReturnValidDate(reservation.getPickUpDate()));
 
         System.out.println("Lütfen araci teslim alacaginiz saati (Saat:Dakika formatinda) giriniz: ");
-        reservation.setReturnTime(LocalTime.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("HH:mm")));
+        reservation.setReturnTime(timeValidator.getValidTime());
+        //reservation.setReturnTime(LocalTime.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("HH:mm")));
 
         reservation.setReservationId(idMaker(String.valueOf(number)));
         number++;
 
-        System.out.println("====================================");
+        System.out.println("=========================================================================================================");
         String message = "Reservasyonunuz faturalandiriliyor! \n";
-        Slow.slowPrint(message, 30);
+        Slow.slowPrint(message, 100);
+        System.out.println();
 
         reservationCard.addReservationToList(reservation);
 

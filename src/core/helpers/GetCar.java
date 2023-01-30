@@ -1,7 +1,6 @@
 package core.helpers;
 
 import entities.concretes.Honda;
-
 import java.util.Scanner;
 
 public class GetCar {
@@ -11,35 +10,34 @@ public class GetCar {
 
     public void getHonda() {
         Honda honda = new Honda();
-
         int flag = 0;
         String id;
 
         do {
-            id = inp.nextLine();
+            id = inp.nextLine().trim();
             honda.fillHondaList();
             for (Honda w : honda.hondaList) {
 
                 if (w.getId().equals(id)) {
-                    System.out.printf("%-7s  %-10s  %-10s  %-10s  %-14s  %-10s %-15s\n", "Marka", "Model", "ID", "Model Yılı", "Otomatik Vites", "Yakıt Tipi", "Günlük Fiyat");
-                    System.out.printf("%-7s  %-10s  %-10s  %-10s  %-14s  %-10s %-15s\n", "-----", "-----", "--", "----------", "--------------", "----------", "------------");
-                    System.out.printf("%-7s  %-10s  %-10s  %-10s  %-14s  %-10s $%-14s\n", "Honda", w.getModel(), w.getId(), w.getModelYear(), w.isGear(), w.getFuelType(), w.getDailyPrice());
-
+                    System.out.println();
+                    System.out.printf("%-13s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","Arac Kodu","Marka","Model","Model Yılı","Otomatik Vites","Yakıt Tipi","Günlük Fiyat");
+                    System.out.printf("%-13s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","-----------","--------","---------","----------","--------------","----------","------------");
+                    System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"Honda",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
                     reservationCard.addCarToList(w);
                     w.setActive(false);
                     flag++;
                     break;
                 }
-
             }
 
             if (flag == 0) {
+                System.out.println();
                 System.out.println("Girilen kodla eşleşen araç bulunamadı!");
             } else {
-                System.out.println("Başarıyla kaydolmuştur");
+                System.out.println();
+                System.out.println("Arac secme islemi başarıyla gerceklesmistir");
                 break;
             }
-
         } while (true);
     }
 

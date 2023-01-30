@@ -58,13 +58,28 @@ public class Honda extends Cars {
 
     @Override
     public void showAvailableCars(boolean isActive){
-
-        System.out.printf("%-10s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","Marka","Model","ID","Model Yılı","Otomatik Vites","Yakıt Tipi","Günlük Fiyat");
-        System.out.printf("%-10s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","--------","---------","-----------","----------","--------------","----------","------------");
+        System.out.println();
+        System.out.println("////////////////////////////////////// MÜSAIT ARACLARIMIZ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n");
+        System.out.printf("%-13s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","Arac Kodu","Marka","Model","Model Yılı","Otomatik Vites","Yakıt Tipi","Günlük Fiyat");
+        System.out.printf("%-13s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","-----------","--------","---------","----------","--------------","----------","------------");
         for (Honda w :hondaList){
 
             if (w.isActive()==isActive){
-                System.out.printf("%-10s  %-10s  %-13s  %-10s  %-14s  %-12s $%-14s\n","Honda",w.getModel(),w.getId(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
+                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"Honda",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
+            }
+        }
+        System.out.println();
+    }
+
+    @Override
+    public void showSelectedCar(boolean isActive) {
+        System.out.println();
+        System.out.printf("%-13s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","Arac Kodu","Marka","Model","Model Yılı","Otomatik Vites","Yakıt Tipi","Günlük Fiyat");
+        System.out.printf("%-13s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","-----------","--------","---------","----------","--------------","----------","------------");
+        for (Honda w :hondaList){
+
+            if (w.isActive()==isActive){
+                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"Honda",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
             }
         }
         System.out.println();
@@ -72,13 +87,14 @@ public class Honda extends Cars {
 
 
     public void showInactiveCars(boolean isActive){
-
-        System.out.printf("%-10s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","Marka","Model","ID","Model Yılı","Otomatik Vites","Yakıt Tipi","Günlük Fiyat");
-        System.out.printf("%-10s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","--------","---------","-----------","----------","--------------","----------","------------");
+        System.out.println();
+        System.out.println("////////////////////////////////////// MÜSAIT OLMAYAN ARACLARIMIZ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n");
+        System.out.printf("%-13s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","Arac Kodu","Marka","Model","Model Yılı","Otomatik Vites","Yakıt Tipi","Günlük Fiyat");
+        System.out.printf("%-13s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","-----------","--------","---------","----------","--------------","----------","------------");
         for (Honda w:hondaList){
 
             if (!w.isActive()){
-                System.out.printf("%-10s  %-10s  %-13s  %-10s  %-14s  %-12s $%-14s\n","Honda",w.getModel(),w.getId(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
+                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"Honda",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
             }
         }
     }

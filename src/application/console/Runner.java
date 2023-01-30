@@ -1,6 +1,6 @@
 package application.console;
 
-import core.helpers.Start;
+import application.console.concretes.Start;
 
 public class Runner {
 

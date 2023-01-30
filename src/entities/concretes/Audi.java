@@ -49,6 +49,11 @@ public class Audi extends Cars {
     }
 
     @Override
+    public void showSelectedCar(boolean isActive) {
+
+    }
+
+    @Override
     public void showInactiveCars(boolean isActive) {
 
     }

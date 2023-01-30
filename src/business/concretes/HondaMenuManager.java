@@ -1,28 +1,25 @@
 package business.concretes;
 
+import application.console.concretes.Start;
+import business.abstracts.CarService;
 import core.helpers.GetCar;
-import core.helpers.GetReservation;
 import core.helpers.Slow;
 import entities.concretes.Honda;
 
+
 import java.util.Scanner;
 
-public class HondaMenuManager extends MenuManager {
+public class HondaMenuManager extends MenuManager implements CarService {
 
-    Scanner inp= new Scanner(System.in);
-
+    Scanner inp = new Scanner(System.in);
     Honda honda = new Honda(); //DI (Dependeny Injection) --> Don't repeat yourself (DRY)  - SOLID
-
     CustomerManager customerManager = new CustomerManager();
     GetCar getCar = new GetCar();
-    GetReservation reservationCard = new GetReservation();
 
-    public void hondaMenu(){
-
-        honda.fillHondaList();
-
+    public void hondaMenu() {
         String select;
 
+        honda.fillHondaList();
         honda.showAvailableCars(true);
 
 //        System.out.println("=================== InactiveCars ==============");
@@ -32,18 +29,18 @@ public class HondaMenuManager extends MenuManager {
         System.out.println("Rezervasyon işlemini bitirmek için 'Q', devam etmek için herhangi bir tuşa basınız");
         select = inp.nextLine();
 
-        if (select.equalsIgnoreCase("Q")){
+        if (select.equalsIgnoreCase("Q")) {
             getSelectionMenu();
         }
 
-        System.out.println("Lütfen kiralamak istediğiniz arabanın kodunu giriniz");
+        System.out.print("Lütfen kiralamak istediğiniz arabanın kodunu giriniz:");
+        System.out.println();
         getCar.getHonda();
 
-
-        String s ="Müşteri kayıt menüsüne yönlendiriliyorsunuz...\n";
-        Slow.slowPrint(s,30);
+        System.out.println();
+        String s = "==> Müşteri kayıt menüsüne yönlendiriliyorsunuz...\n\n";
+        Slow.slowPrint(s, 30);
         customerManager.register();
-
     }
 
     @Override
@@ -53,21 +50,71 @@ public class HondaMenuManager extends MenuManager {
 
         do {
             id = inp.nextLine();
-            for (Honda w:honda.hondaList){
+            for (Honda w : honda.hondaList) {
 
-                if (w.getId().equals(id)){
+                if (w.getId().equals(id)) {
                     w.showAvailableCars(true);
                     flag++;
                     break;
                 }
             }
 
-            if (flag==0){
+            if (flag == 0) {
                 System.out.println("Girilen kodla eşleşen araç bulunamadı!");
-            }else {
+            } else {
                 System.out.println("Başarıyla kaydolmuştur");
                 break;
             }
-        }while (true);
+        } while (true);
+    }
+
+
+    public void HondaList() {
+
+        int select;
+        Scanner inp = new Scanner(System.in);
+
+        System.out.println("Lütfen görüntülemek istediginiz arac listesinin numarasini giriniz");
+        System.out.println("1-Sadece müsait olan araclar");
+        System.out.println("2-Sadece rezerve edilmis araclar");
+        System.out.println("3-Tüm araclar");
+        System.out.println("0-Ana menü");
+        select = inp.nextInt();
+
+        switch (select) {
+            case 1:
+                this.availableCarsList();
+                break;
+            case 2:
+                this.reservedCarsList();
+            case 3:
+                this.allCarsList();
+            case 0:
+                Start.start();
+
+        }
+
+
+    }
+
+
+    @Override
+    public void availableCarsList() {
+        honda.showAvailableCars(true);
+    }
+
+    @Override
+    public void reservedCarsList() {
+        honda.showInactiveCars(false);
+    }
+
+    @Override
+    public void allCarsList() {
+        honda.fillHondaList();
+    }
+
+    @Override
+    public void unAvailableCarsList() {
+
     }
 }

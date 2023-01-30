@@ -20,10 +20,7 @@ public class CustomerManager extends CustomerService {
 
     Customers customer = new Customers();
     MenuManager menuManager = new MenuManager();
-
-
     public List<Customers> customersNewList = new ArrayList<>();
-
     public static int counter = 1000;
 
     //Validations
@@ -31,17 +28,15 @@ public class CustomerManager extends CustomerService {
     TcNoValidator tcNoValidator = new TcNoValidator();
     DateValidator dateValidator = new DateValidator();
     DriverLicenceValidator driverLicenceValidator = new DriverLicenceValidator();
-
     ReservationManager reservationManager = new ReservationManager();
-
     GetReservation reservationCard = new GetReservation();
     Scanner scanner = new Scanner(System.in);
 
     @Override
     public void register() {
-
-        System.out.println("Müşteri kayıt bölümüne hoşgeldiniz !");
-        System.out.println("====================================");
+        System.out.println("================================== MÜSTERI KAYIT =============================================\n");
+        System.out.println("Müşteri kayıt bölümüne hoşgeldiniz");
+        System.out.println("=================================================================================================");
 
         System.out.println("Lütfen adınızı giriniz: ");
         customer.setFirstName(nameValidator.isValidFirstName());
@@ -58,7 +53,11 @@ public class CustomerManager extends CustomerService {
         System.out.println("Lütfen ehliyetinizin verilis tarihinizi giriniz: ");
         customer.setDriverLicenceDate(dateValidator.getValidDate());
 
-        System.out.println("Kiralama icin bilgileriniz kontrol ediliyor");
+        System.out.println();
+
+        String message1 ="Kiralama icin bilgileriniz kontrol ediliyor............";
+        Slow.slowPrint(message1,60);
+        System.out.println();
         boolean driverLicenceValid = driverLicenceValidator.driverLicenceEligibility(customer.getBirthDate(), customer.getDriverLicenceDate());
 
         if (driverLicenceValid) {
@@ -66,13 +65,14 @@ public class CustomerManager extends CustomerService {
             customer.setId(idMaker(customer.getTcNo()));
 
             counter++;
+            System.out.println();
             System.out.println(customer);
+            System.out.println();
             System.out.println("Müsteri Başarıyla eklenmiştir...\n");
             reservationCard.addCustomerToList(customer);
+            System.out.println();
 
-            System.out.println(customer);
-
-            String s = "Rezervasyon onay bölümüne yönlendiriliyorsunuz...\n";
+            String s = "===> Rezervasyon onay bölümüne yönlendiriliyorsunuz...\n";
             Slow.slowPrint(s, 30);
             System.out.println();
             reservationManager.reservationConfirmation();
@@ -80,9 +80,9 @@ public class CustomerManager extends CustomerService {
 
             System.out.println("Bilgileriniz arac kiralama icin uygun görülmemistir!");
 
-            System.out.println("====================================");
-            String message = "Arac secim bölümüne tekrardan yönlendiriliyorsunuz! \n";
-            Slow.slowPrint(message, 30);
+            System.out.println("========================================== !!!!! ==========================================");
+            String message2 = "===> Arac secim bölümüne tekrardan yönlendiriliyorsunuz! \n";
+            Slow.slowPrint(message2, 30);
             menuManager.getSelectionMenu();
         }
     }
@@ -91,7 +91,6 @@ public class CustomerManager extends CustomerService {
     public void addCustomerToNewList() {
 
         customersNewList.add(customer);
-
     }
 
     @Override
@@ -102,7 +101,6 @@ public class CustomerManager extends CustomerService {
         number = number.substring(number.length() - 3);
 
         return suffix + number + counter; //CUST1231000
-
     }
 
 
