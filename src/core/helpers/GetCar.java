@@ -57,7 +57,7 @@ public class GetCar {
                     System.out.println();
                     System.out.printf("%-13s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","Arac Kodu","Marka","Model","Model Yılı","Otomatik Vites","Yakıt Tipi","Günlük Fiyat");
                     System.out.printf("%-13s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","-----------","--------","---------","----------","--------------","----------","------------");
-                    System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"Honda",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
+                    System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"BMW",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
                     reservationCard.addCarToList(w);
                     w.setActive(false);
                     flag++;
@@ -91,7 +91,7 @@ public class GetCar {
                     System.out.println();
                     System.out.printf("%-13s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","Arac Kodu","Marka","Model","Model Yılı","Otomatik Vites","Yakıt Tipi","Günlük Fiyat");
                     System.out.printf("%-13s  %-10s  %-13s  %-10s  %-14s  %-12s %-15s\n","-----------","--------","---------","----------","--------------","----------","------------");
-                    System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"Honda",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
+                    System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"AUDI",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
                     reservationCard.addCarToList(w);
                     w.setActive(false);
                     flag++;
