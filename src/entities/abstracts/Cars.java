@@ -14,6 +14,8 @@ public abstract class Cars {
     private boolean isActive=true;
     private String model;
 
+    private String brandName;
+
 
 //    private String colour;
 //    private int km;
@@ -21,7 +23,13 @@ public abstract class Cars {
 //    private int door;
 //    private String ac;
 //    private boolean inMaintance=false;
+public String getBrandName() {
+    return brandName;
+}
 
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
+    }
 
     public String getModel() {
         return model;
@@ -83,6 +91,7 @@ public abstract class Cars {
     public String toString() {
         return "Cars{" +
                 "id='" + id + '\'' +
+                ", brandName='" + brandName + '\'' +
                 ", model='" + model + '\'' +
                 ", modelYear=" + modelYear +
                 ", gear=" + gear +

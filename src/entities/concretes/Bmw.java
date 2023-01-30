@@ -14,7 +14,8 @@ public class Bmw extends Cars {
     public Bmw() {
     }
 
-    public Bmw(String model, String id, int modelYear, boolean gear, String fuelType, double dailyPrice,boolean isActive) {
+    public Bmw(String brandName,String model, String id, int modelYear, boolean gear, String fuelType, double dailyPrice,boolean isActive) {
+        super.setBrandName(brandName);
         super.setModel(model);
         super.setId(id);
         super.setModelYear(modelYear);
@@ -29,6 +30,7 @@ public class Bmw extends Cars {
     public String toString() {
         return
                 "Id: " + getId() +
+                        ", brandName='" + getBrandName() + '\'' +
                         ", Model: "+ getModel() +
                         ", Model Year: "+ getModelYear() +
                         ", Automatic Gear: "+ isGear() +
@@ -40,14 +42,14 @@ public class Bmw extends Cars {
 
 
     public void fillBmwList(){
-        Bmw bmw =  new Bmw("118","1182020100",2020,true,"gasoline",75.90,true);
-        Bmw bmw2 = new Bmw("116","1162022101",2022,false,"electric",55.90,true);
-        Bmw bmw3 = new Bmw("216","2162021100",2021,true,"diesel",65.90,true);
-        Bmw bmw4 = new Bmw("218","2182022101",2022,true,"gasoline",65.90,true);
-        Bmw bmw5 = new Bmw("320","3202022100",2022,false,"hybrid",75.90,true);
-        Bmw bmw6 = new Bmw("520","5202023100",2023,true,"gasoline",95.90,true);
-        Bmw bmw7 = new Bmw("X5D","X5D2021100",2021,true,"diesel",105.90,false);
-        Bmw bmw8 = new Bmw("X6B","X6B2020100",2020,true,"electric",125.90,true);
+        Bmw bmw  = new Bmw("BMW","118","1182020100",2020,true,"gasoline",75.90,true);
+        Bmw bmw2 = new Bmw("BMW","116","1162022101",2022,false,"electric",55.90,true);
+        Bmw bmw3 = new Bmw("BMW","216","2162021100",2021,true,"diesel",65.90,true);
+        Bmw bmw4 = new Bmw("BMW","218","2182022101",2022,true,"gasoline",65.90,true);
+        Bmw bmw5 = new Bmw("BMW","320","3202022100",2022,false,"hybrid",75.90,true);
+        Bmw bmw6 = new Bmw("BMW","520","5202023100",2023,true,"gasoline",95.90,true);
+        Bmw bmw7 = new Bmw("BMW","X5D","X5D2021100",2021,true,"diesel",105.90,false);
+        Bmw bmw8 = new Bmw("BMW","X6B","X6B2020100",2020,true,"electric",125.90,true);
         bmwList.add(bmw);
         bmwList.add(bmw2);
         bmwList.add(bmw3);
@@ -67,7 +69,7 @@ public class Bmw extends Cars {
         for (Bmw w :bmwList){
 
             if (w.isActive()==isActive){
-                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"BMW",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
+                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),w.getBrandName(),w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
             }
         }
         System.out.println();
@@ -81,7 +83,7 @@ public class Bmw extends Cars {
         for (Bmw w :bmwList){
 
             if (w.isActive()==isActive){
-                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"BMW",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
+                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),w.getBrandName(),w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
             }
         }
         System.out.println();
@@ -96,7 +98,7 @@ public class Bmw extends Cars {
         for (Bmw w :bmwList){
 
             if (!w.isActive()){
-                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"BMW",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
+                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),w.getBrandName(),w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
             }
         }
     }
