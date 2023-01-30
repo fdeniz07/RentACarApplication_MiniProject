@@ -13,11 +13,11 @@ public class ReservationCostCalculateManager implements ReservationCostCalculate
     @Override
     public double getTwoWeeksPrice(int day, double dailyPrice) {
 
-        return day * dailyPrice * DiscountRates.getOneWeekPrice.getDiscountRate();
+        return day * dailyPrice * DiscountRates.getTwoWeeksPrice.getDiscountRate();
     }
 
     @Override
     public double getMoreThanTwoWeeksPrice(int day, double dailyPrice) {
-        return day * dailyPrice * DiscountRates.getOneWeekPrice.getDiscountRate();
+        return day * dailyPrice * DiscountRates.getMoreThanTwoWeeksPrice.getDiscountRate();
     }
 }

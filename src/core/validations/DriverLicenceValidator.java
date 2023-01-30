@@ -25,6 +25,7 @@ public class DriverLicenceValidator {
             if (validBirthDate < 18 || validBirthDate > 100) {
                 System.out.println("Lütfen geçerli bir yaş giriniz!");
                 System.out.println("Tekar deneyiniz: ");
+                break;
 
             } else if (validLicenceDate < 3) {
                 System.out.println("Araç kiralamak için en az 3 yillik tecrübeye sahip olmalısınız!");
