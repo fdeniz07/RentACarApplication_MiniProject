@@ -26,6 +26,8 @@ public class HondaMenuManager extends MenuManager implements CarService {
 //        honda.showInactiveCars(false);
 
         System.out.println("================================== ARAC SECIMI =============================================\n");
+
+
         System.out.println("Rezervasyon işlemini bitirmek için 'Q', devam etmek için herhangi bir tuşa basınız");
         select = inp.nextLine();
 
@@ -69,7 +71,7 @@ public class HondaMenuManager extends MenuManager implements CarService {
     }
 
 
-    public void HondaList() {
+    public void hondaListMenu() {
 
         int select;
         Scanner inp = new Scanner(System.in);

@@ -67,7 +67,7 @@ public class Bmw extends Cars {
         for (Bmw w :bmwList){
 
             if (w.isActive()==isActive){
-                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"Honda",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
+                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"BMW",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
             }
         }
         System.out.println();
@@ -81,7 +81,7 @@ public class Bmw extends Cars {
         for (Bmw w :bmwList){
 
             if (w.isActive()==isActive){
-                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"Honda",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
+                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"BMW",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
             }
         }
         System.out.println();
@@ -96,7 +96,7 @@ public class Bmw extends Cars {
         for (Bmw w :bmwList){
 
             if (!w.isActive()){
-                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"Honda",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
+                System.out.printf("%-13s  %-10s  %-16s  %-10s  %-12s  %-12s $%-14s\n",w.getId(),"BMW",w.getModel(),w.getModelYear(),w.isGear(),w.getFuelType(),w.getDailyPrice());
             }
         }
     }

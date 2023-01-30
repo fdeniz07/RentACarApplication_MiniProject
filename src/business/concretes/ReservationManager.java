@@ -53,7 +53,7 @@ public class ReservationManager extends ReservationService implements IdMaker {
         reservation.setReturnLocation(scanner.nextLine().toUpperCase());
 
         System.out.println("Lütfen araci teslim edeceginiz tarihi (Gun/Ay/Yil formatinda) giriniz: ");
-        reservation.setReturnDate(pickUpDateValidator.getReturnValidDate(reservation.getPickUpDate()));
+        reservation.setReturnDate(pickUpDateValidator.getReturnValidDate());
 
         System.out.println("Lütfen araci teslim alacaginiz saati (Saat:Dakika formatinda) giriniz: ");
         reservation.setReturnTime(timeValidator.getValidTime());

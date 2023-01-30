@@ -7,8 +7,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PickUpReturnDateValidator {
-     LocalDate temporalDate = null;
-     boolean isDigit;
+
+    boolean isDigit;
+    LocalDate temporalDate;
 
     public LocalDate getPickUpValidDate() {//reservasyon isleminde, müsterinin araci teslim alma tarihi, rezervasyon giris tarihinden eski olamaz!
 
@@ -44,20 +45,18 @@ public class PickUpReturnDateValidator {
             if (date.isBefore(LocalDate.now())) {
                 System.out.println("Rezervasyon tarihi bugünden önce olamaz!");
                 isDigit = true;
-                continue;
             }
 
         } while (isDigit);
-
+        temporalDate = date;
         return date;
     }
 
-    public  LocalDate getReturnValidDate(LocalDate getPickUpDate) {
+    public LocalDate getReturnValidDate() {
 
         Reservation reservation = new Reservation();
-        LocalDate pickUpDate = reservation.getPickUpDate();
 
-        LocalDate date = null;
+        LocalDate returnDate = null;
         Scanner scanner = new Scanner(System.in);
         int gun, ay, yil;
         System.out.println("Lutfen araci teslim edeceginiz tarihinizi gun / ay / yil (31/01/2021) olacak sekilde giriniz");
@@ -79,25 +78,24 @@ public class PickUpReturnDateValidator {
                 continue;
             }
             try {
-                date = LocalDate.of(yil, ay, gun);
+                returnDate = LocalDate.of(yil, ay, gun);
             } catch (Exception e) {
                 System.out.println(" Lutfen gecerli bir tarih giriniz.");
                 isDigit = true;
             }
 
             try {
-                if (temporalDate.isBefore(getPickUpDate)) {
+                if (temporalDate.isBefore(returnDate)) {
                     isDigit = false;
                 }
             } catch (Exception e) {
-                System.out.println("Teslim tarihi rezervasyon tarihi önce olamaz!");
+                System.out.println("Teslim tarihi rezervasyon tarihinden önce olamaz!");
                 isDigit = true;
             }
-            temporalDate = (LocalDate) date;
 
         } while (isDigit);
 
-        return temporalDate;
+        return returnDate;
     }
 
 //    public static void main(String[] args) {

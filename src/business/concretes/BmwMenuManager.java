@@ -16,7 +16,7 @@ public class BmwMenuManager extends MenuManager implements CarService {
     CustomerManager customerManager = new CustomerManager();
     GetCar getCar = new GetCar();
 
-    public void hondaMenu() {
+    public void bmwMenu() {
         String select;
 
         bmw.fillBmwList();
@@ -35,7 +35,7 @@ public class BmwMenuManager extends MenuManager implements CarService {
 
         System.out.print("Lütfen kiralamak istediğiniz arabanın kodunu giriniz:");
         System.out.println();
-        getCar.getHonda();
+        getCar.getBmw();
 
         System.out.println();
         String s = "==> Müşteri kayıt menüsüne yönlendiriliyorsunuz...\n\n";
@@ -69,7 +69,7 @@ public class BmwMenuManager extends MenuManager implements CarService {
     }
 
 
-    public void HondaList() {
+    public void BmwList() {
 
         int select;
         Scanner inp = new Scanner(System.in);
