@@ -19,6 +19,7 @@ public class CustomerManager extends CustomerService {
 //Müsteri ile ilgili id, ad, soyad, dogum tarihi, ehliyet alis tarihi ve telefon bilgiler
 
     Customers customer = new Customers();
+
     MenuManager menuManager = new MenuManager();
     public List<Customers> customersNewList = new ArrayList<>();
     public static int counter = 1000;

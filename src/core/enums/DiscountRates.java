@@ -7,6 +7,7 @@ public enum DiscountRates {
     getMoreThanTwoWeeksPrice(0.85);
 
     private final double discountRate;
+
     DiscountRates(double discounRate) {
         this.discountRate = discounRate;
     }
